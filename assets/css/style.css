@@ -5,3 +5,15 @@ h2 {
 .location-search {
     margin-bottom: 15px;
 }
+
+#weather-detail {
+    height: 200px;
+}
+
+#search-form {
+    height: 100%;
+}
+
+.forecast {
+    display: none;
+}

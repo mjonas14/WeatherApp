@@ -15,9 +15,9 @@
     <header>
       <h1 class="text-center">Weather Forecast</h1>
     </header>
-    <div class="container text-center">
+    <div class="container">
       <div class="row">
-        <div class="col-4">
+        <form id="search-form" class="col-4">
           <h2>Search for a city:</h2>
           <div>
             <input
@@ -27,12 +27,62 @@
               placeholder="San Francisco"
             />
           </div>
-          <button type="submit" id="submit-btn" class="btn btn-primary">Search</button>
-          <!-- Location history cards -->
+          <button type="submit" id="submit-btn" class="btn btn-primary">
+            Search
+          </button>
+          <!-- Location search history cards -->
           <div id="cards"></div>
+        </form>
+        <div id="weather-detail" class="col-8 border border-dark text-left">
+          <h3 id="city-name" class="text-left mt-2"></h3>
+          <h5 id="temperature" class="text-left mt-2"></h5>
+          <h5 id="wind" class="text-left mt-2"></h5>
+          <h5 id="humidity" class="text-left mt-2"></h5>
         </div>
-        <div class="col-8">
-            2 of 3 (wider)
+        <div class="col-8 border border-dark text-left forecast">
+            <h5>5-Day Forecast</h5>
+            <div class="row">
+                <div class="col-sm-3">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title title1">Special title treatment</h5>
+                      <p class="card-text text1">With supporting text below as a natural lead-in to additional content.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-3">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title title2">Special title treatment</h5>
+                      <p class="card-text text2">With supporting text below as a natural lead-in to additional content.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card">
+                      <div class="card-body">
+                        <h5 class="card-title title3">Special title treatment</h5>
+                        <p class="card-text text3">With supporting text below as a natural lead-in to additional content.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-3">
+                    <div class="card">
+                      <div class="card-body">
+                        <h5 class="card-title title4">Special title treatment</h5>
+                        <p class="card-text text4">With supporting text below as a natural lead-in to additional content.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-3">
+                    <div class="card">
+                      <div class="card-body">
+                        <h5 class="card-title title5">Special title treatment</h5>
+                        <p class="card-text text5">With supporting text below as a natural lead-in to additional content.</p>
+                      </div>
+                    </div>
+                  </div>
+              </div>
         </div>
       </div>
     </div>
