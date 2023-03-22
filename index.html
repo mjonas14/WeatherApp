@@ -17,36 +17,43 @@
     </header>
     <div class="container">
       <div class="row">
-        <form id="search-form" class="col-4">
-          <h2>Search for a city:</h2>
-          <div>
-            <input
-              type="email"
-              class="form-control location-search"
-              id="inputLocation"
-              placeholder="San Francisco"
-            />
-          </div>
-          <button type="submit" id="submit-btn" class="btn btn-primary">
-            Search
-          </button>
-          <!-- Location search history cards -->
-          <div id="cards"></div>
-        </form>
-        <div id="weather-detail" class="col-8 border border-dark text-left">
-          <h3 id="city-name" class="text-left mt-2"></h3>
-          <h5 id="temperature" class="text-left mt-2"></h5>
-          <h5 id="wind" class="text-left mt-2"></h5>
-          <h5 id="humidity" class="text-left mt-2"></h5>
+        <div class="col-4">
+          <form id="search-form">
+            <h2>Search for a city:</h2>
+            <div>
+              <input
+                type="email"
+                class="form-control location-search"
+                id="inputLocation"
+                placeholder="San Francisco"
+              />
+            </div>
+            <button type="submit" id="submit-btn" class="btn btn-primary">
+              Search
+            </button>
+            <!-- Location search history cards -->
+            <div id="cards"></div>
+          </form>
         </div>
-        <div class="col-8 border border-dark text-left forecast">
-            <h5>5-Day Forecast</h5>
-            <div class="row">
+        <div id="weather-detail" class="col-8 border border-dark text-left">
+          <div class="row">
+            <div class="col-12">
+              <h3 id="city-name" class="text-left mt-2"></h3>
+              <h5 id="temperature" class="text-left mt-2"></h5>
+              <h5 id="wind" class="text-left mt-2"></h5>
+              <h5 id="humidity" class="text-left mt-2"></h5>
+            </div>
+            <div class="col-12 border border-dark text-left forecast mt-5">
+              <h5>5-Day Forecast</h5>
+              <div class="row">
                 <div class="col-sm-3">
                   <div class="card">
                     <div class="card-body">
                       <h5 class="card-title title1">Special title treatment</h5>
-                      <p class="card-text text1">With supporting text below as a natural lead-in to additional content.</p>
+                      <p class="card-text text1">
+                        With supporting text below as a natural lead-in to additional
+                        content.
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -54,37 +61,54 @@
                   <div class="card">
                     <div class="card-body">
                       <h5 class="card-title title2">Special title treatment</h5>
-                      <p class="card-text text2">With supporting text below as a natural lead-in to additional content.</p>
+                      <p class="card-text text2">
+                        With supporting text below as a natural lead-in to additional
+                        content.
+                      </p>
                     </div>
                   </div>
                 </div>
                 <div class="col-sm-3">
-                    <div class="card">
-                      <div class="card-body">
-                        <h5 class="card-title title3">Special title treatment</h5>
-                        <p class="card-text text3">With supporting text below as a natural lead-in to additional content.</p>
-                      </div>
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title title3">Special title treatment</h5>
+                      <p class="card-text text3">
+                        With supporting text below as a natural lead-in to additional
+                        content.
+                      </p>
                     </div>
                   </div>
-                  <div class="col-sm-3">
-                    <div class="card">
-                      <div class="card-body">
-                        <h5 class="card-title title4">Special title treatment</h5>
-                        <p class="card-text text4">With supporting text below as a natural lead-in to additional content.</p>
-                      </div>
+                </div>
+                <div class="col-sm-3">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title title4">Special title treatment</h5>
+                      <p class="card-text text4">
+                        With supporting text below as a natural lead-in to additional
+                        content.
+                      </p>
                     </div>
                   </div>
-                  <div class="col-sm-3">
-                    <div class="card">
-                      <div class="card-body">
-                        <h5 class="card-title title5">Special title treatment</h5>
-                        <p class="card-text text5">With supporting text below as a natural lead-in to additional content.</p>
-                      </div>
+                </div>
+                <div class="col-sm-3">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title title5">Special title treatment</h5>
+                      <p class="card-text text5">
+                        With supporting text below as a natural lead-in to additional
+                        content.
+                      </p>
                     </div>
                   </div>
+                </div>
               </div>
+            </div>
+          </div>
         </div>
       </div>
+    </div>
+    <div class="container">
+      
     </div>
 
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
