@@ -69,6 +69,19 @@ $(document).ready(function () {
 
   var forecast = $(".forecast");
 
+  var $day1title = $('.title1')
+  var $day2title = $('.title2');
+  var $day3title = $('.title3');
+  var $day4title = $('.title4');
+  var $day5title = $('.title5');
+
+  var $day1text = $('.text1');
+  var $day2text = $('.text2');
+  var $day3text = $('.text3');
+  var $day4text = $('.text4');
+  var $day5text = $('.text5');
+
+
   function getWeather(coordinates) {
     var lon = coordinates[0];
     var lat = coordinates[1];
@@ -89,14 +102,63 @@ $(document).ready(function () {
       .then(function (data) {
         console.log(data);
 
-        $cityName.text(data.city.name);
+        $cityName.text(data.city.name + ' (' + data.list[0].dt_txt.substring(0,11) + ')');
 
         var temp = Math.round(data.list[0].main.temp - 273);
-        $temp.text(`Temperature: ${temp}\u00B0C`);
+        $temp.text(`Temp: ${temp}\u00B0C`);
         $wind.text(`Wind: ${data.list[0].wind.speed} mph`);
         $humidity.text(`Humidity: ${data.list[0].main.humidity}%`);
 
+        $day1title.text(data.list[2].dt_txt.substring(0,11));
+
+        // Sourced from: https://stackoverflow.com/questions/44177417/how-to-display-openweathermap-weather-icon
+        var imgID = data.list[2].weather[0].icon;
+        var imgURL = "http://openweathermap.org/img/w/" + imgID + ".png";
+        $('#weatherImg1').attr('src',imgURL);
+        $('.text11').text(`Temp: ${Math.round(data.list[2].main.temp - 273)}\u00B0C`)
+        $('.text12').text(`Wind: ${data.list[2].wind.speed} mph`)
+        $('.text13').text(`Humidty: ${data.list[2].main.humidity}%`)
+
+
+        $day2title.text(data.list[10].dt_txt.substring(0,11));
+        imgID = data.list[10].weather[0].icon;
+        imgURL = "http://openweathermap.org/img/w/" + imgID + ".png";
+        $('#weatherImg2').attr('src',imgURL);
+        $('.text21').text(`Temp: ${Math.round(data.list[10].main.temp - 273)}\u00B0C`)
+        $('.text22').text(`Wind: ${data.list[10].wind.speed} mph`)
+        $('.text23').text(`Humidty: ${data.list[10].main.humidity}%`)
+
+        $day3title.text(data.list[18].dt_txt.substring(0,11));
+        imgID = data.list[18].weather[0].icon;
+        imgURL = "http://openweathermap.org/img/w/" + imgID + ".png";
+        $('#weatherImg3').attr('src',imgURL);
+        $('.text31').text(`Temp: ${Math.round(data.list[18].main.temp - 273)}\u00B0C`)
+        $('.text32').text(`Wind: ${data.list[18].wind.speed} mph`)
+        $('.text33').text(`Humidty: ${data.list[18].main.humidity}%`)
+
+
+        $day4title.text(data.list[26].dt_txt.substring(0,11));
+        imgID = data.list[26].weather[0].icon;
+        imgURL = "http://openweathermap.org/img/w/" + imgID + ".png";
+        $('#weatherImg4').attr('src',imgURL);
+        $('.text41').text(`Temp: ${Math.round(data.list[26].main.temp - 273)}\u00B0C`)
+        $('.text42').text(`Wind: ${data.list[26].wind.speed} mph`)
+        $('.text43').text(`Humidty: ${data.list[26].main.humidity}%`)
+
+        $day5title.text(data.list[34].dt_txt.substring(0,11));
+        imgID = data.list[34].weather[0].icon;
+        imgURL = "http://openweathermap.org/img/w/" + imgID + ".png";
+        $('#weatherImg5').attr('src',imgURL);
+        $('.text51').text(`Temp: ${Math.round(data.list[34].main.temp - 273)}\u00B0C`)
+        $('.text52').text(`Wind: ${data.list[34].wind.speed} mph`)
+        $('.text53').text(`Humidty: ${data.list[34].main.humidity}%`)
+
         forecast.show();
+
       });
   };
+
+
+
+
 });

@@ -16,4 +16,9 @@ h2 {
 
 .forecast {
     display: none;
+    margin-bottom: 20px;
+}
+
+.forecast-card {
+    width: 190px;
 }

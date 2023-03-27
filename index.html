@@ -17,7 +17,7 @@
     </header>
     <div class="container">
       <div class="row">
-        <div class="col-4">
+        <div class="col-3">
           <form id="search-form">
             <h2>Search for a city:</h2>
             <div>
@@ -35,7 +35,7 @@
             <div id="cards"></div>
           </form>
         </div>
-        <div id="weather-detail" class="col-8 border border-dark text-left">
+        <div id="weather-detail" class="col-9 border border-dark text-left">
           <div class="row">
             <div class="col-12">
               <h3 id="city-name" class="text-left mt-2"></h3>
@@ -43,61 +43,71 @@
               <h5 id="wind" class="text-left mt-2"></h5>
               <h5 id="humidity" class="text-left mt-2"></h5>
             </div>
-            <div class="col-12 border border-dark text-left forecast mt-5">
+            <div class="col-12 text-left forecast mt-5">
               <h5>5-Day Forecast</h5>
               <div class="row">
-                <div class="col-sm-3">
+                <div class="forecast-card">
                   <div class="card">
                     <div class="card-body">
-                      <h5 class="card-title title1">Special title treatment</h5>
-                      <p class="card-text text1">
-                        With supporting text below as a natural lead-in to additional
-                        content.
-                      </p>
+                      <h6 class="card-title font-weight-bold title1"></h6>
+                      <div>
+                        <img id="weatherImg1" src="" alt="Weather symbol" />
+                      </div>
+                      <p class="card-text text11"></p>
+                      <p class="card-text text12"></p>
+                      <p class="card-text text13"></p>
                     </div>
                   </div>
                 </div>
-                <div class="col-sm-3">
+                <div class="forecast-card">
                   <div class="card">
                     <div class="card-body">
-                      <h5 class="card-title title2">Special title treatment</h5>
-                      <p class="card-text text2">
-                        With supporting text below as a natural lead-in to additional
-                        content.
-                      </p>
+                      <h6 class="card-title title2"></h6>
+                      <div>
+                        <img id="weatherImg2" src="" alt="Weather symbol" />
+                      </div>
+                      <p class="card-text text21"></p>
+                      <p class="card-text text22"></p>
+                      <p class="card-text text23"></p>
                     </div>
                   </div>
                 </div>
-                <div class="col-sm-3">
+                <div class="forecast-card">
                   <div class="card">
                     <div class="card-body">
-                      <h5 class="card-title title3">Special title treatment</h5>
-                      <p class="card-text text3">
-                        With supporting text below as a natural lead-in to additional
-                        content.
-                      </p>
+                      <h6 class="card-title title3"></h6>
+                      <div>
+                        <img id="weatherImg3" src="" alt="Weather symbol" />
+                      </div>
+                      <p class="card-text text31"></p>
+                      <p class="card-text text32"></p>
+                      <p class="card-text text33"></p>
                     </div>
                   </div>
                 </div>
-                <div class="col-sm-3">
+                <div class="forecast-card">
                   <div class="card">
                     <div class="card-body">
-                      <h5 class="card-title title4">Special title treatment</h5>
-                      <p class="card-text text4">
-                        With supporting text below as a natural lead-in to additional
-                        content.
-                      </p>
+                      <h6 class="card-title title4"></h6>
+                      <div>
+                        <img id="weatherImg4" src="" alt="Weather symbol" />
+                      </div>
+                      <p class="card-text text41"></p>
+                      <p class="card-text text42"></p>
+                      <p class="card-text text43"></p>
                     </div>
                   </div>
                 </div>
-                <div class="col-sm-3">
+                <div class="forecast-card">
                   <div class="card">
                     <div class="card-body">
-                      <h5 class="card-title title5">Special title treatment</h5>
-                      <p class="card-text text5">
-                        With supporting text below as a natural lead-in to additional
-                        content.
-                      </p>
+                      <h6 class="card-title title5"></h6>
+                      <div>
+                        <img id="weatherImg5" src="" alt="Weather symbol" />
+                      </div>
+                      <p class="card-text text51"></p>
+                      <p class="card-text text52"></p>
+                      <p class="card-text text53"></p>
                     </div>
                   </div>
                 </div>
@@ -107,10 +117,13 @@
         </div>
       </div>
     </div>
-    <div class="container">
-      
-    </div>
+    <div class="container"></div>
 
+    <script
+      src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+      integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
+      crossorigin="anonymous"
+    ></script>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="./assets/js/script.js"></script>
   </body>
