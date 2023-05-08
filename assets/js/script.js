@@ -49,11 +49,11 @@ $(document).ready(function () {
 
   function getCityCoordinates(location) {
     var apiURL2 =
-      "http://api.openweathermap.org/geo/1.0/direct?q=" +
+      "https://api.openweathermap.org/geo/1.0/direct?q=" +
       location +
       "&appid=a92b76b452eecd6e4d74f46c9da3aac8";
     var apiURLTest =
-      "http://api.openweathermap.org/geo/1.0/direct?q=London&limit=5&appid=a92b76b452eecd6e4d74f46c9da3aac8";
+      "https://api.openweathermap.org/geo/1.0/direct?q=London&limit=5&appid=a92b76b452eecd6e4d74f46c9da3aac8";
     console.log(apiURL2);
 
     return fetch(apiURL2)
@@ -100,7 +100,7 @@ $(document).ready(function () {
 
         // Sourced from: https://stackoverflow.com/questions/44177417/how-to-display-openweathermap-weather-icon
         var imgID = data.list[0].weather[0].icon;
-        var imgURL = "http://openweathermap.org/img/w/" + imgID + ".png";
+        var imgURL = "https://openweathermap.org/img/w/" + imgID + ".png";
         $icon.attr('src',imgURL);
 
         var temp = Math.round(data.list[0].main.temp - 273);
@@ -111,7 +111,7 @@ $(document).ready(function () {
         $day1title.text(data.list[2].dt_txt.substring(0,11));
 
         var imgID = data.list[2].weather[0].icon;
-        var imgURL = "http://openweathermap.org/img/w/" + imgID + ".png";
+        var imgURL = "https://openweathermap.org/img/w/" + imgID + ".png";
         $('#weatherImg1').attr('src',imgURL);
         $('.text11').text(`Temp: ${Math.round(data.list[2].main.temp - 273)}\u00B0C`)
         $('.text12').text(`Wind: ${data.list[2].wind.speed} mph`)
@@ -120,7 +120,7 @@ $(document).ready(function () {
 
         $day2title.text(data.list[10].dt_txt.substring(0,11));
         imgID = data.list[10].weather[0].icon;
-        imgURL = "http://openweathermap.org/img/w/" + imgID + ".png";
+        imgURL = "https://openweathermap.org/img/w/" + imgID + ".png";
         $('#weatherImg2').attr('src',imgURL);
         $('.text21').text(`Temp: ${Math.round(data.list[10].main.temp - 273)}\u00B0C`)
         $('.text22').text(`Wind: ${data.list[10].wind.speed} mph`)
@@ -128,7 +128,7 @@ $(document).ready(function () {
 
         $day3title.text(data.list[18].dt_txt.substring(0,11));
         imgID = data.list[18].weather[0].icon;
-        imgURL = "http://openweathermap.org/img/w/" + imgID + ".png";
+        imgURL = "https://openweathermap.org/img/w/" + imgID + ".png";
         $('#weatherImg3').attr('src',imgURL);
         $('.text31').text(`Temp: ${Math.round(data.list[18].main.temp - 273)}\u00B0C`)
         $('.text32').text(`Wind: ${data.list[18].wind.speed} mph`)
@@ -137,7 +137,7 @@ $(document).ready(function () {
 
         $day4title.text(data.list[26].dt_txt.substring(0,11));
         imgID = data.list[26].weather[0].icon;
-        imgURL = "http://openweathermap.org/img/w/" + imgID + ".png";
+        imgURL = "https://openweathermap.org/img/w/" + imgID + ".png";
         $('#weatherImg4').attr('src',imgURL);
         $('.text41').text(`Temp: ${Math.round(data.list[26].main.temp - 273)}\u00B0C`)
         $('.text42').text(`Wind: ${data.list[26].wind.speed} mph`)
@@ -145,7 +145,7 @@ $(document).ready(function () {
 
         $day5title.text(data.list[34].dt_txt.substring(0,11));
         imgID = data.list[34].weather[0].icon;
-        imgURL = "http://openweathermap.org/img/w/" + imgID + ".png";
+        imgURL = "https://openweathermap.org/img/w/" + imgID + ".png";
         $('#weatherImg5').attr('src',imgURL);
         $('.text51').text(`Temp: ${Math.round(data.list[34].main.temp - 273)}\u00B0C`)
         $('.text52').text(`Wind: ${data.list[34].wind.speed} mph`)
