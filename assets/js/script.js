@@ -8,6 +8,7 @@ $(document).ready(function () {
   var $cityName = $("#city-name");
   var $temp = $("#temperature");
   var $wind = $("#wind");
+  var $icon = $('#weatherImg0');
   var $humidity = $("#humidity");
 
   var forecast = $(".forecast");
@@ -100,7 +101,7 @@ $(document).ready(function () {
         // Sourced from: https://stackoverflow.com/questions/44177417/how-to-display-openweathermap-weather-icon
         var imgID = data.list[0].weather[0].icon;
         var imgURL = "http://openweathermap.org/img/w/" + imgID + ".png";
-        $('#weatherImg').attr('src',imgURL);
+        $icon.attr('src',imgURL);
 
         var temp = Math.round(data.list[0].main.temp - 273);
         $temp.text(`Temp: ${temp}\u00B0C`);
