@@ -10,6 +10,14 @@ $(document).ready(function () {
   var $wind = $("#wind");
   var $humidity = $("#humidity");
 
+  var forecast = $(".forecast");
+
+  var $day1title = $('.title1')
+  var $day2title = $('.title2');
+  var $day3title = $('.title3');
+  var $day4title = $('.title4');
+  var $day5title = $('.title5');
+
   $submitBtn.on("click", function (event) {
     event.preventDefault();
 
@@ -67,21 +75,6 @@ $(document).ready(function () {
       });
   }
 
-  var forecast = $(".forecast");
-
-  var $day1title = $('.title1')
-  var $day2title = $('.title2');
-  var $day3title = $('.title3');
-  var $day4title = $('.title4');
-  var $day5title = $('.title5');
-
-  var $day1text = $('.text1');
-  var $day2text = $('.text2');
-  var $day3text = $('.text3');
-  var $day4text = $('.text4');
-  var $day5text = $('.text5');
-
-
   function getWeather(coordinates) {
     var lon = coordinates[0];
     var lat = coordinates[1];
@@ -104,6 +97,11 @@ $(document).ready(function () {
 
         $cityName.text(data.city.name + ' (' + data.list[0].dt_txt.substring(0,11) + ')');
 
+        // Sourced from: https://stackoverflow.com/questions/44177417/how-to-display-openweathermap-weather-icon
+        var imgID = data.list[0].weather[0].icon;
+        var imgURL = "http://openweathermap.org/img/w/" + imgID + ".png";
+        $('#weatherImg').attr('src',imgURL);
+
         var temp = Math.round(data.list[0].main.temp - 273);
         $temp.text(`Temp: ${temp}\u00B0C`);
         $wind.text(`Wind: ${data.list[0].wind.speed} mph`);
@@ -111,7 +109,6 @@ $(document).ready(function () {
 
         $day1title.text(data.list[2].dt_txt.substring(0,11));
 
-        // Sourced from: https://stackoverflow.com/questions/44177417/how-to-display-openweathermap-weather-icon
         var imgID = data.list[2].weather[0].icon;
         var imgURL = "http://openweathermap.org/img/w/" + imgID + ".png";
         $('#weatherImg1').attr('src',imgURL);
