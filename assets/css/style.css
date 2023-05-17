@@ -22,3 +22,7 @@ h2 {
 .forecast-card {
     width: 190px;
 }
+
+.display_flex {
+    display: flex;
+}

@@ -101,7 +101,8 @@ $(document).ready(function () {
         // Sourced from: https://stackoverflow.com/questions/44177417/how-to-display-openweathermap-weather-icon
         var imgID = data.list[0].weather[0].icon;
         var imgURL = "https://openweathermap.org/img/w/" + imgID + ".png";
-        $icon.attr('src',imgURL);
+        $('#weatherImg0').attr('src',imgURL);
+        console.log($icon);
 
         var temp = Math.round(data.list[0].main.temp - 273);
         $temp.text(`Temp: ${temp}\u00B0C`);
