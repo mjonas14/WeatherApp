@@ -4,7 +4,6 @@ $(document).ready(function () {
   var locationList = [];
   var $cityEl = $("#cards");
 
-  var $mainDiv = $("#weather-detail");
   var $cityName = $("#city-name");
   var $temp = $("#temperature");
   var $wind = $("#wind");
@@ -19,22 +18,69 @@ $(document).ready(function () {
   var $day4title = $('.title4');
   var $day5title = $('.title5');
 
+  // Pre-populate search history cards
+  if (localStorage.getItem("List") != null) {
+    var temp1 = JSON.parse(localStorage.getItem('List'));
+    for (let i = 0; i < temp1.length; i++) {
+      var $div1 = document.createElement("button");
+      var $div2 = document.createElement("div");
+      $div1.classList = "card mt-2 bg-secondary text-black btn btn-secondary";
+      $div1.style.width = '200px';
+      $div2.classList = "card-body";
+  
+      $div2.textContent = temp1[i];
+  
+      $cityEl.append($div1);
+      $div1.append($div2);
+    }
+  };
+
+  $cityEl.on("click", function(event) {
+    event.preventDefault();
+    let cityName = event.target.textContent;
+    getCityCoordinates(cityName).then(function (coordinates) {
+      getWeather(coordinates);
+    });
+  });
+
+
+
+
+  // When submit button is clicked
   $submitBtn.on("click", function (event) {
     event.preventDefault();
 
+    
     var location = $locationField.val();
     if (location === "") {
       alert("Need to input a valid location");
       return;
     }
-    locationList.push(location);
 
-    let string = JSON.stringify(locationList);
-    localStorage.setItem("List", string);
+    console.log('Is it?', localStorage.getItem("List") === null);
 
-    var $div1 = document.createElement("div");
+
+    if (localStorage.getItem("List") === null) {
+
+      let temp = [];
+      temp.push(location);
+      let string = JSON.stringify(temp);
+      localStorage.setItem("List", string);
+
+    } else {
+
+      let temp = JSON.parse(localStorage.getItem('List'));
+      temp.push(location);
+      let string = JSON.stringify(temp);
+      localStorage.setItem("List", string);
+
+    }
+
+    // Create new HTML element and add to page
+    var $div1 = document.createElement("button");
     var $div2 = document.createElement("div");
-    $div1.classList = "card mt-2 bg-secondary text-black";
+    $div1.classList = "card mt-2 bg-secondary text-black btn btn-secondary";
+    $div1.style.width = '200px';
     $div2.classList = "card-body";
 
     $div2.textContent = location;
